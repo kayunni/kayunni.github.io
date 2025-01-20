@@ -1643,6 +1643,10 @@ img::-moz-selection {
 .navbar-default .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 3px;
 }
+/* 내가 추가하는 부분 */
+.page-fullscreen {
+  background-color: #c79a99;
+}
 .page-fullscreen .intro-header {
   position: fixed;
   left: 0;
