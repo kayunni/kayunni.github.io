@@ -1,6 +1,5 @@
 # Site settings
 title: Kayunni Blog
-subtitle: "직접 부딪히며 배운 것들을 기록하다"
 SEOTitle: Kayunni Blog | 가윤 블로그
 header-img: img/bg-home.jpg
 email: gykim0129@gmail.com
@@ -70,8 +69,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
