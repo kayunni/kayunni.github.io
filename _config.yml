@@ -3,7 +3,7 @@ title: Kayunni Blog
 SEOTitle: 가윤 블로그 | Kayunni Blog
 header-img: img/home-bg.jpg
 email: gykim0129@gmail.com
-description: "这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
+description: "kayunni의 기술 블로그, 제 블로그를 방문해주시는 모든 분들과 함께 성장해나가고 싶습니다!"
 keyword: "Kayunni Blog, Algorithm, Web, JavaScript, React"
 url: "https://kayunni.github.io" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
