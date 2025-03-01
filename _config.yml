@@ -13,8 +13,6 @@ future: true
 
 # SNS settings
 RSS: false
-#weibo_username: huxpro
-#zhihu_username: huxpro
 github_username: kayunni
 #twitter_username: huxpro
 #facebook_username:  huxpro
@@ -102,7 +100,7 @@ page-mathjax: false
   #   { title: "尹峰以为", href: "http://ingf.github.io/" },
   # ]
 
-# giscus 시도
+# giscus
 giscus:
   repo: "kayunni/kayunni.github.io"
   repo_id: "R_kgDONsr2eg"
