@@ -1,0 +1,110 @@
+---
+layout:     post
+title:      "1. Data and Signals"
+subtitle:   "1주차"
+date:       2025-03-15 23:00:00
+author:     "Kayunni"
+# header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Computer Network
+---
+
+컴퓨터네트워크 1주차 수업에서 다룬 개념을 정리해보고자 한다. 
+
+## 데이터 통신 모델의 전체적인 흐름
+
+![image](/image/in-post/260315_1.png)
+
+우선 입력된 텍스트 정보는 Digital bit stream으로 변환된다. 송신기(Transmitter)는 전송을 위해 이 데이터를 전자기 신호, 즉 아날로그 신호로 변환한다. 전송 시스템을 거친 신호는 수신기(Receiver)에서 다시 Digital bit stream과 텍스트 정보로 복원된다.
+
+## Data vs. Signals
+
+데이터(Data)와 신호(Signal)의 차이는 무엇일까?
+
+데이터는 의미나 정보를 전달하는 개체로, 사람의 음성이나 온도 같은 연속적인 '아날로그 데이터'와 텍스트, 정수 같은 이산적인 '디지털 데이터'로 나뉜다.
+
+신호는 이러한 데이터를 전기 또는 전자기적으로 표현한 것을 말한다. 신호 또한 아날로그와 디지털로 나뉘는데, 아날로그 신호는 연속적으로 변하는 전자기파를 의미하고 디지털 신호는 컴퓨터가 이해할 수 있는 0과 1의 비트(bit) 정보를 이산적인 전압 펄스(계단 형태)로 표현한 신호이다. 특히, 아날로그 신호는 **연속적(continuous)**이고, 디지털 신호는 **이산적(discrete)**이라는 것이 구분되는 특징이다. 
+
+![image](/image/in-post/260315_2.png)
+
+![image](/image/in-post/260315_3.png)
+
+## Analog Signals
+
+앞서 데이터와 신호를 알아보며, 각각을 아날로그와 디지털로 구분하여 정리하였다. 이제 그 중에서도 아날로그 신호에 대해서 자세히 알아보도록 하자. 
+
+### Periodic Signals
+
+- 동일한 패턴이 반복되는 형태
+- 사인파(Sine Wave): 주기적 아날로그 신호의 가장 기본적인 형태
+
+### Characteristics of Periodic Signals
+
+- Amplitude, 진폭
+    - 신호의 최대값을 의미하며, 절댓값 기준 최대 진폭을 'Peak amplitude'라고 부름
+    
+    ![image](/image/in-post/260315_4.png)
+    
+- Frequency (f), 주파수
+    - 1초 동안 신호가 진동하는 횟수
+    - 단위: Hz
+- Period (T), 주기
+    - 동일한 패턴이 다시 시작될 때까지 걸리는 시간
+    - 단위: s
+- 주파수와 주기는 반비례 관계
+    
+    $f = 1/T$  and $T = 1/f$
+    
+- 주파수&주기에 대한 극단적 케이스
+    - 시간에 따라 전혀 변하지 않는 신호는 주파수가 0(주기는 무한대): zero frequency
+    - 순간적으로 변하는 신호는 주파수가 무한대: infinite frequency
+- Phase, 위상
+    - 시간 0을 기준으로 파형이 어느 위치에서 시작하는지를 나타냄
+    - 단위: 각도(Degree, $0-360^{\circ}$) 또는 라디안(Radian, $0-2\pi$)
+- Wavelength ($\lambda$), 파장
+    - 한 사이클이 차지하는 물리적 거리
+    - derived feature(계산될 수 있는 값)이므로 주기적 신호의 unique feature로 보지 않음
+        
+        ![image.png](attachment:fda8929d-1c7b-44ae-968e-8f246ba2e611:image.png)
+        
+    - wavelength = propagation speed * period = propagation speed / frequency
+    - $\lambda = c / f$
+        - $c$ : propagation speed (medium에 따라 달라짐)
+        - $3 * 10^8 m/s$ : 진공/공기에서의 속도
+        - $2 * 10^8 m/s$: 구리나 광섬유에서의 속도
+
+![image.png](attachment:8e0c6cdb-933c-41ef-9bef-ea41da865390:image.png)
+
+기본적인 것이긴 하지만 또 까먹으니,,, 한번 실어두고 헷갈릴 때마다 봐야겠다
+
+## Time domain vs. Frequency domain
+
+신호를 표현하는 두 가지 관점을 알아보자.
+
+- 시간 영역(Time domain): X축이 시간
+- 주파수 영역(Frequency domain)은 X축이 주파수
+
+→ Time domain에서 물결 모양으로 그려지는 단순 사인파는 Frequency domain에서 특정 주파수 값에 위치한 하나의 점(막대)으로 단순하게 표현된다.
+
+![image.png](attachment:0d818344-ab3b-4314-a4db-208fb623220d:image.png)
+
+Frequency domain으로 표현했을 때 가장 큰 장점은 여러 개의 사인파가 섞여 있을 때 신호의 특성을 훨씬 더 간결하고 유용하게 분석할 수 있다는 점이다! 하단의 그림에서 좌측은 Time domain, 우측은 Frequency domain이다. 여러 사인파가 겹쳐있어 각 특성을 분석하기에 복잡한 좌측과 달리 우측은 특정 주파수에서 그 진폭만큼의 길이를 가진 막대로 표현되므로 여러 파동을 한눈에 보기 쉽다는 장점이 있다.
+
+![image.png](attachment:7193c1cb-f7e0-49c2-b4e3-56963c7cab25:image.png)
+
+## Composite Signals
+
+복합 주기 신호(Composite periodic signal)는 진폭, 주파수, 위상이 서로 다른 여러 개의 단순 사인파들이 합쳐져 만들어진다. 따라서 복잡한 파형도 다시 여러 개의 단순 사인파로 분해할 수 있다는 것이다. 위 그림이 복합 주기 신호의 예시이다. 이를 Time-domain으로 분해하면, 위처럼 하나의 시간축에 대해 여러 연속적인(continuous) 사인파가 겹쳐지게 되지만, Frequency-domain에서는 이산적인(discrete) 주파수들의 조합으로 나타난다.
+
+비주기적 복합 신호(Aperiodic composite signal)는 시간 영역에서 일정한 패턴 없이 무작위로 나타난다. 이 신호를 Frequency-domain으로 변환하면, 개별적인 막대가 아닌 연속적인 곡선 형태로 나타나게 된다. 
+
+![image.png](attachment:78afed60-0624-4f17-9171-91e1fa44f474:image.png)
+
+→ 주기적 복합 신호는 주파수 영역에서 이산적인(Discrete) 주파수들의 조합
+
+→ 비주기적 복합 신호는 주파수 영역에서 연속적인(Continuous) 주파수들의 조합
+
+## Bandwidth
+
+대역폭(Bandwidth)은 특정 복합 신호가 포함하고 있는 주파수의 범위를 의미한다. 수식으로는 복합 신호의 가장 높은 주파수에서 가장 낮은 주파수를 뺀 값으로 계산할 수 있다. 예를 들어 가장 높은 주파수가 5000 Hz, 가장 낮은 주파수가 1000 Hz라면 대역폭은 4000 Hz가 된다.
